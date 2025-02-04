@@ -1,0 +1,123 @@
+body {
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Add a font for better readability */
+}
+
+.admin {
+    display: flex;
+    height: 100vh; /* Full height for the sidebar and main content */
+    padding-top: 50px; /* Add top padding to accommodate the fixed navbar height */
+}
+
+.navbar {
+    width: 100%; /* Full width for the navbar */
+    background-color: #f4f4f4; /* Background color for navbar */
+    padding: 10px; /* Add padding */
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Aligns the navbar at the top */
+    left: 0; /* Aligns the navbar at the left */
+    z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.sidebar {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #fff; /* Background color for sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sidebar */
+    position: fixed; /* Fixes the sidebar in place */
+    top: 50px; /* Position below the navbar */
+    bottom: 0; /* Stretches to the bottom of the viewport */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.admin-page {
+    display: flex;
+    flex-grow: 1; /* Allow the main content to grow */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    padding-left: 0; /* No padding for sidebar on welcome box */
+    background-color: #f4f4f4; /* Background color for main content */
+    box-sizing: border-box;
+    height: calc(100vh - 50px); /* Full height minus navbar height */
+}
+
+.welcome-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 400px;
+    max-width: 100%;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.welcome-box:hover {
+    transform: translateY(-5px); /* Subtle hover effect for a modern feel */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-box h2 {
+    margin-bottom: 15px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+}
+
+.welcome-box p {
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #555;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0094a8;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-btn:hover {
+    background-color: #115d67; /* Darker blue for hover effect */
+}
+
+/* Mobile Responsiveness */
+@media(max-width: 800px) {
+    .admin {
+        flex-direction: column; /* Stack elements vertically on mobile */
+        padding-top: 50px; /* Add padding for mobile */
+    }
+
+    .navbar {
+        width: 100%; /* Full width for the navbar on mobile */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width for the sidebar on mobile */
+        position: relative; /* Change to relative on mobile */
+        top: 0; /* Reset top position */
+    }
+
+    .admin-page {
+        padding-left: 0; /* Remove padding for mobile */
+        height: auto; /* Allow height to adjust automatically */
+    }
+
+    .welcome-box {
+        width: 100%; /* Full width for welcome box on mobile */
+        padding: 30px;
+    }
+}
